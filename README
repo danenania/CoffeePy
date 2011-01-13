@@ -2,4 +2,4 @@ Want to compile CoffeeScript on Windows or without running Node.js? Now it's eas
 
 Run with: python coffee_watch.py <watch_dir>
 
-Uses the excellent PyV8 module to execute coffeescript's javascript compiler inside python.
+Uses the excellent PyV8 module to execute CoffeeScript's js compiler inside python.
