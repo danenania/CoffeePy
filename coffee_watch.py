@@ -6,8 +6,6 @@ import codecs
 
 POLL_INTERVAL = 2
 
-sys.path.append('coffee_watch')
-
 compiled = {}
 
 
@@ -58,7 +56,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) >=2:
         f = sys.argv[1] 
-    else: print "Usage: python coffee_converter.py <watch_directory>"
+    else: print "Usage: python coffee_watch.py <watch_directory>"
             
     watch_folder(f)
         
