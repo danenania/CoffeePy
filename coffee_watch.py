@@ -18,7 +18,7 @@ compiled = {}
 
 def watch_folder(folder, interval = POLL_INTERVAL):
     folder = os.path.realpath(folder)
-    print "Checking %s every %d seconds" % (folder,
+    print "Checking %s and subdirectories every %d seconds" % (folder,
                                                interval
                                                )
     while True:
