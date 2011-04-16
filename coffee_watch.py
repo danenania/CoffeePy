@@ -3,8 +3,15 @@ import time
 import sys
 import os
 import codecs
+import urllib
 
+COMPILER_URL = 'https://github.com/jashkenas/coffee-script/raw/master/extras/coffee-script.js'
 POLL_INTERVAL = 2
+
+#create compiler with latest browser js coffeescript compiler from github
+ct = v8.JSContext()
+ct.enter()
+compiler = ct.eval(urllib.urlopen(COMPILER_URL).read())
 
 compiled = {}
 
@@ -45,13 +52,9 @@ def _compile_file(path, compiled_path):
         codecs.open(compiled_path, 'w', encoding='utf-8').write(_convert(codecs.open(path, 'r', encoding='utf-8').read()))
     except Exception, e:
         print "Error parsing CoffeScript in %s: %s" % (path, str(e))
-        
-        
+               
 
-def _convert(coffee):
-    ct = v8.JSContext()
-    ct.enter()
-    return ct.eval(open('coffee-script.js').read()).compile(coffee)
+def _convert(coffee): return compiler.compile(coffee)
 
 if __name__ == '__main__':
     
