@@ -51,9 +51,10 @@ def _compile_file(path, compiled_path):
     try:
         codecs.open(compiled_path, 'w', encoding='utf-8').write(_convert(codecs.open(path, 'r', encoding='utf-8').read()))
     except Exception, e:
-        print "Error parsing CoffeScript in %s: %s" % (path, str(e))
+		msg = "Error parsing CoffeScript in %s: %s" % (compiled_path, str(e))
+        print msg
+		codecs.open(compiled_path, 'w', encoding='utf-8').write(msg)
                
-
 def _convert(coffee): return compiler.compile(coffee)
 
 if __name__ == '__main__':
