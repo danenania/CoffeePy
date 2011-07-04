@@ -9,7 +9,7 @@ Usage:
 ------
 
 <pre>
-Usage: coffee_watch.py [options] <watch_directory>
+Usage: coffee_watch.py [options] watch_directory
 
 Options:
   -h, --help            show this help message and exit
