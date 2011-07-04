@@ -62,9 +62,10 @@ def _compile_file(path, compiled_path):
     try:
         codecs.open(compiled_path, 'w', encoding='utf-8')\
               .write(_convert(codecs.open(path, 'r', encoding='utf-8').read()))
-        print "compiled %s" % (os.path.split(path)[1],)
+        print "compiled %s" % (os.path.relpath(path, watch_path),)
     except Exception, e:
-        msg = "Error parsing CoffeScript in %s: %s" % (path, str(e))
+        msg = "Error parsing %s: %s" % (os.path.relpath(path, watch_path),
+                                                       str(e))
         print msg
         codecs.open(compiled_path, 'w', encoding='utf-8').write(str(e))
                
