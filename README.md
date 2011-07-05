@@ -15,4 +15,6 @@ Options:
   -h, --help            show this help message and exit
   -b, --bare            compile without the top-level function wrapper
   -o DIR, --output=DIR  set the output directory for the compiled JavaScript
+  -i SECONDS, --interval=SECONDS
+                        set the poll interval in seconds (default: 2)
 </pre>
