@@ -55,7 +55,8 @@ def _compile_file(path, compiled_path):
     try:
         codecs.open(compiled_path, 'w', encoding='utf-8')\
               .write(_convert(codecs.open(path, 'r', encoding='utf-8').read()))
-        print "compiled %s" % (os.path.relpath(path, opts.watch.folder),)
+        print "%s - compiled %s" % (time.strftime('%X'),
+                                    os.path.relpath(path, opts.watch.folder))
     except Exception, e:
         msg = "Error parsing %s: %s" % (os.path.relpath(path, opts.watch.folder),
                                                        str(e))
